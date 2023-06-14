@@ -1,0 +1,29 @@
+%btn{
+    background: $color-blue;
+    color: white;
+    display: inline-block;
+    overflow: hidden;
+    padding: 15px 45px 15px 40px;
+    @include position(relative);
+    text-decoration: none;
+    transition: 0.4s ease;
+    border:none;
+    z-index: 1;
+    &:before,
+    &:after {
+      background: $color-dark-black;
+      transition: 0.3s ease;
+      content: '';
+      @include position(absolute);
+      z-index: -1;
+    }
+  }
+
+%mobile-navbar-hamburger{
+  content: '';
+    background: $color-white;
+      @include size(32px,3px);
+      display: block;
+      @include position(absolute,null,null,null,0);
+      transition:all ease 0.2s;
+  }

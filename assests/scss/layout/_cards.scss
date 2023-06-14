@@ -1,0 +1,117 @@
+/* ==================
+------ Floating Info ------
+================== */
+.floating-main {
+    flex-wrap: wrap;
+    @include flex(flex,space-between,null);
+
+    &-content {
+        display: inline-block;
+        @include size(calc((100% - 72px) / 3));
+
+        @include viewport-md{
+            @include size(48%);
+        }
+
+        @include viewport-sm{
+            @include size(100%);
+            text-align: center;
+            padding: 25px;
+            margin-bottom: 0;
+            @include flex(flex,center,center);
+            flex-direction: column;
+        }
+    }
+
+
+    @include viewport-sm{
+        flex-direction: column;
+        @include flex(flex,center,center);
+    }
+}
+
+.floating-main-content {
+    &-img {
+        margin-bottom: 37px;
+    }
+
+    &-heading {
+        margin-bottom: 26px;
+    }
+
+    &-description {
+        margin-bottom: 39px;
+    }
+}
+
+
+/* ==================
+------ place cards ------
+================== */
+
+.top-places-card-content {
+    margin-top: 64px
+}
+
+.place-cards {
+    .top-place-head {
+        @include flex(flex, space-between, center);
+    }
+}
+
+.top-places-main {
+    flex-wrap: wrap;
+    @include flex(flex, space-between,null);
+    row-gap: 10px;
+
+   &-content {
+        @include size(32%);
+        display: inline-block;
+        margin-bottom: 58px;
+    }
+
+    @include viewport-md{
+        &-content {
+            @include size(47%);
+        }
+    }
+
+    @include viewport-sm{
+        flex-direction: column;
+
+        &-content {
+            @include size(100%);
+        }
+    }
+}
+
+.card-content-banner {
+    @include position(relative);
+
+    &-img {
+        @include size(100%,100%);
+        @include position(relative);
+    }
+}
+
+.top-place-fig {
+    @include position(absolute,null,null,2px,null);
+    background: $color-eerieb-black;
+    @include size(100%);
+    .detail{
+        @include flex(flex,space-between,center);
+        padding:16px 25px;
+      }
+}
+
+.card-info-content {
+
+    .card-info-description {
+
+        margin: 45px 0 31px 0;
+    }
+
+    .card-info-btn {
+        display: inline-block;
+    }
+}

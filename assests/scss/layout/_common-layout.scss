@@ -1,0 +1,302 @@
+/* ==================
+------ Common ------
+================== */
+.container {
+    max-width: 1320px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container-md {
+    max-width: 1140px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ml-14 {
+    margin-left: 14px
+}
+
+.ml-26 {
+    margin-left: 26px;
+}
+
+.mb-77 {
+    margin-bottom: $mb-77;
+}
+
+img {
+    display: block;
+}
+
+.mbl-d-none {
+    @include viewport-sm {
+        display: none;
+    }
+}
+
+.mb-btn {
+    display: none;
+
+    @include viewport-sm {
+        display: block;
+    }
+}
+
+.no_scroll{
+    overflow: hidden;
+}
+
+/* ==================
+------ Hero ------
+================== */
+
+.hero {
+    @include position(relative);
+    @include size(null,100vh);
+
+    &-main {
+        @include size(null,100%);
+    }
+
+    &-bg {
+        display: block;
+        @include position(absolute,0);
+        z-index: -1;
+        @include size(100%,100%);
+
+        &-img {
+            @include size(100%,100%);
+            object-fit: cover;
+        }
+    }
+
+    &-content{
+        @include flex(flex, center, start);
+        min-height: 100vh;
+        flex-direction: column;
+        padding-bottom: 80px;
+
+        @include viewport-sm {
+            padding-bottom: 0;
+        }
+
+        &-heading {
+            margin-bottom: 22px;
+            @include size(66%);
+
+
+           @include viewport-lg {
+            @include size(100%);
+                text-align: center;
+            }
+
+            @include viewport-sm {
+
+                font-size: $txt-lg;
+            }
+        }
+
+        &-description {
+            padding-right: 73px;
+            margin-bottom: 59px;
+            @include size(70%);
+
+           @include viewport-lg {
+                text-align: center;
+                padding: 0 73px;
+                @include size(100%);
+            }
+
+            @include viewport-sm {
+
+                font-size: $txt-md;
+                padding: 0;
+
+            }
+        }
+    }
+
+
+}
+
+/* ==================
+------ Floating Info ------
+================== */
+
+.floating-content {
+    box-shadow: 0 2px 20px 0 rgba(21, 24, 36, 0.16);
+    padding: 93px 63px 100px 100px;
+    margin-top: -200px;
+    margin-bottom: 50px;
+    background: #fff;
+
+    .heading-md-info {
+        margin-bottom: 120px;
+
+        @include viewport-sm {
+            margin-bottom: 0;
+            text-align: center;
+            font-size: $heading-sm;
+            padding: 20px 0;
+        }
+    }
+
+
+    @include viewport-md {
+        top: -162px
+    }
+
+
+    @include viewport-sm {
+        top: 0;
+        padding: 0;
+        margin: 10px 0;
+    }
+}
+
+
+
+/* ==================
+------ PLaces to visit ------
+================== */
+
+.top-places {
+    margin-bottom: 121px;
+
+    @include viewport-sm {
+        padding: 0;
+        margin: 50px 0
+    }
+
+    &-head{
+        @include flex(flex, space-between, center);
+    }
+
+    &-main{
+        margin-top: 36px
+    }
+
+    &-img{
+        @include flex(flex, space-between, null);
+        @include size(100%);
+    gap: 10px;
+
+    @include viewport-sm {
+        flex-direction: column;
+    }
+    }
+}
+
+
+.top-place-card {
+    overflow: hidden;
+    @include position(relative);
+
+    &-title {
+        z-index: 2;
+        @include position(absolute,null,null,29px,27px);
+    }
+
+
+    &::after {
+        content: "";
+        @include position(absolute,0,null,null,0);
+        background-color: $color-eerieb-black;
+        @include size(100%,100%);
+        transition: .5s ease all;
+
+    }
+
+    &-image {
+        transition: .5s ease all;
+
+    }
+
+    &:hover {
+        .top-place-card-image {
+            transform: scale(1.1);
+        }
+    }
+
+}
+
+
+/* ==================
+------ image and text ------
+================== */
+
+.place-info {
+    margin-bottom: 50px
+}
+
+.place-info-main {
+    @include flex(flex,null,null);
+
+    &-content {
+
+        @include flex(flex, center, start);
+        flex-direction: column;
+        text-align: start;
+
+        @include viewport-sm {
+            text-align: center;
+        }
+    }
+
+    .place-info-content {
+
+        margin-left: 31px;
+
+
+        &-description {
+            @include size(80%);
+            margin: 45px 0 58px 0;
+
+            @include viewport-sm {
+                margin: 20px 0;
+                @include size(100%);
+            }
+        }
+
+        @include viewport-sm {
+            margin: 10px 0;
+
+            .place-info-content-description {
+                margin: 20px 0;
+                @include size(100%);
+            }
+        }
+    }
+
+    &-image {
+        @include size(100%);
+    }
+
+
+    @include viewport-sm {
+        display: block;
+
+        .place-info-content-heading br {
+            display: none;
+        }
+    }
+}
+
+
+
+
+/* ==================
+------ Video------
+================== */
+
+
+iframe {
+    object-fit: cover;
+    display: block;
+    @include size(100%);
+}

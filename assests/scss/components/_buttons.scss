@@ -1,0 +1,65 @@
+.search-btn{
+    @extend %btn;
+    padding:14px 40px;
+    cursor:pointer;
+}
+
+.seemore-btn{
+
+   @extend %btn;
+    padding: 12px 20px;
+    font-size: $txt-sm;
+    font-family: $font-family;
+
+    @include viewport-sm{
+        @include size(100%);
+        text-align:center;
+    }
+}
+
+.top-left {
+    &:before {
+        @include position(null,0,null,0,-125%);
+      transform: skewX(-45deg);
+      @include size(100%);
+    }
+    &:hover {
+      &:before {
+        @include size(250%);
+        border-color: $color-dark-black;
+      }
+    }
+  }
+
+
+
+// arrow animation
+.arrow {
+    color: $color-blue;
+    text-decoration: none;
+    text-align: center;
+
+    &::after {
+        display: inline-block;
+       margin-left: 26px;
+        content: "\0279E"; // arrow right unicode
+        transition: transform 0.3s ease-out;
+    }
+
+    &:hover {
+        cursor: pointer;
+
+        &::after {
+            transform: translateX(4px);
+        }
+    }
+}
+
+.mb-link{
+    display: none;
+@include viewport-sm{
+    display: block;
+}
+}
+
+

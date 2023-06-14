@@ -1,0 +1,18 @@
+form {
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+form .form-main {
+  padding: 22px 0;
+  border: 1px solid #fff;
+}
+form .form-main input {
+  -webkit-appearance: radio;
+     -moz-appearance: radio;
+          appearance: radio;
+  margin-right: 60px;
+}
+form .form-main #age {
+  accent-color: white;
+}/*# sourceMappingURL=input.css.map */

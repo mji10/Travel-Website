@@ -1,0 +1,53 @@
+.footer {
+    background-color: $color-dark-black;
+    line-height: 1.5;
+    padding: 50px 0;
+
+    .ft {
+        &-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        &-title {
+            padding-bottom: 10px;
+        }
+    }
+}
+
+
+/* Footer main */
+.ft-main {
+    padding: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+
+    @include viewport-sm {
+        flex-direction: column;
+    }
+
+    &-logo {
+        @include size(40%);
+        @include flex(flex, null, null);
+
+        @include viewport-sm {
+            @include size(100%);
+            @include flex(flex, center, center)
+        }
+    }
+
+    &-content {
+        @include size(60%);
+
+        @include flex(flex, space-between, null);
+
+        @include viewport-sm {
+            @include flex(flex, space-between, start);
+            @include size(100%);
+        }
+    }
+
+    &-item {
+        padding: 20px;
+    }
+}

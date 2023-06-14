@@ -1,0 +1,136 @@
+
+.main-form {
+    display: flex;
+
+    @include viewport-md {
+        flex-direction: column;
+        @include flex (null,center,center);
+        @include size(100%);
+    }
+
+    @include viewport-sm {
+        flex-direction: column;
+        @include flex (null,center,center);
+        @include size(100%);
+        margin-top: 10px;
+    }
+
+}
+
+input:focus {
+    color: $color-white;
+    outline: none;
+
+    &::placeholder {
+        color: transparent;
+    }
+}
+
+.form-wrapper {
+
+    margin-right: 30px;
+    @include position(relative);
+}
+
+.radio-button-container {
+    color: rgba(0, 0, 0, 0.75);
+    display: block;
+   @include position(relative);
+    line-height: 25px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 18px;
+    user-select: none;
+    border-bottom: 1px solid $color-white;
+
+    input[type=radio] {
+        @include position(absolute);
+        opacity: 0;
+    }
+}
+
+.checkmark {
+    @include position(absolute,10px,null,null,0);
+    @include size(21px,21px);
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 50%;
+    border: 2px solid $color-white;
+    transition: all 0.3s;
+    line-height: 21px;
+
+    &::after{
+        content: "";
+    @include position(absolute);
+    display: none;
+    line-height: 13px
+    }
+}
+
+.text:focus .input-field~.checkmark {
+    border-color: rgba(0, 0, 0, 0.5);
+}
+
+.radio-button-container .text:focus~.checkmark {
+    background-color: rgba(0, 0, 0, 0);
+    border-color: teal;
+}
+
+
+.radio-button-container input[type=text]:focus~.checkmark:after {
+    display: block;
+}
+
+.radio-button-container .checkmark:after {
+    top: 2px;
+    left: 2px;
+    @include size(13px,13px);
+    border-radius: 50%;
+    background: $color-white;
+    line-height: 13px;
+}
+
+.input-field {
+    @include position(relative);
+    @include size(250px,44px);
+    line-height: 44px;
+
+    .input-head{
+    @include position(absolute,0,null,null,0);
+    @include size(100%);
+    color: #d3d3d3;
+    transition: 0.2s all;
+    cursor: text;
+    margin-left: 32px;
+    }
+}
+
+.text-input {
+    @include size(100%);
+    border: 0;
+    outline: 0;
+    padding: 15px;
+    box-shadow: none;
+    color:$color-white;
+    background-color: transparent;
+    margin-left: 32px;
+
+}
+
+.text-input:focus~.input-head,
+.text-input:valid~.input-head {
+    font-size: 14px;
+    top: -24px;
+    color: $color-white;
+}
+
+input[type="submit"] {
+    border:none;
+    background-color: $color-blue;
+    color: $color-white;
+    padding: 15px 40px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-block;
+    text-transform: capitalize;
+}

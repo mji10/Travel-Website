@@ -1,0 +1,39 @@
+
+// Colors
+$color-white:#ffffff;
+
+$color-black:#000000;
+
+$color-dark-black:#0e1d28;
+
+$color-eerieb-black:rgba(21, 24, 36, 0.6);
+
+$color-greyish:#bfc0c5;
+
+$color-blue:#1b7dff;
+
+$color-brandeis-blue:#006dfe;
+
+$color-yankees-blue:#102746;
+
+// fonts
+$font-family: 'Lato', sans-serif;
+
+$heading-lg:50px;
+$heading-md:35px;
+$heading-sm:30px;
+
+$txt-lg:24px;
+$txt-md:18px;
+$txt-sm:16px;
+
+$mb-77:77px;
+
+// Media Queries
+$breakpoint:(
+    "viewport-xs":0,
+    "viewport-sm":480px,
+    "viewport-md":760px,
+    "viewport-lg":960px,
+    "viewport-xl":963px
+);
