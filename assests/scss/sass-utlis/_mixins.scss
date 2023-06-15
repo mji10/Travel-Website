@@ -7,11 +7,19 @@
 
 }
 
-@mixin flex($display , $justify-content, $align-items){
+// @mixin flex($display , $justify-content, $align-items){
 
-    display:$display;
-    justify-content: $justify-content;
-    align-items:$align-items;
+//     display:$display;
+//     justify-content: $justify-content;
+//     align-items:$align-items;
+// }
+
+@mixin flex($display , $justify-content, $align-items , $flex-direction){
+
+  display:$display;
+  justify-content: $justify-content;
+  align-items:$align-items;
+  flex-direction:$flex-direction;
 }
 
 @mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {

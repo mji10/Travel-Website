@@ -13,15 +13,13 @@
 }
 
 .navbar {
-    @include flex(flex,space-between,center);
-    flex-direction: row;
+    @include flex(flex,space-between,center,row);
     @include size(100%);
     margin: auto;
 
     .show__nav {
         @include size(null,calc(212px + 30px));
-        @include flex(flex,null,null);
-        flex-direction: column;
+        @include flex(flex,null,null,column);
     }
 
    @include viewport-lg {
@@ -31,8 +29,7 @@
             
 
             .show__nav {
-                @include flex(flex,space-evenly,center);
-                flex-direction: column;
+                @include flex(flex,space-evenly,center,column);
                 @include size(null,700px);
                 background-color: $color-dark-black;
                 opacity: 1;
@@ -66,7 +63,7 @@
     }
 
    @include viewport-xl {
-        @include flex(flex,null,null);
+        @include flex(flex,null,null,null);
         opacity: 1;
         visibility: visible;
     }

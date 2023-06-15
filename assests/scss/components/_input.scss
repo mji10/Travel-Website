@@ -3,14 +3,14 @@
     display: flex;
 
     @include viewport-md {
-        flex-direction: column;
-        @include flex (null,center,center);
+        // flex-direction: column;
+        @include flex (null,center,center,column);
         @include size(100%);
     }
 
     @include viewport-sm {
         flex-direction: column;
-        @include flex (null,center,center);
+        @include flex (null,center,center,column);
         @include size(100%);
         margin-top: 10px;
     }

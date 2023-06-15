@@ -3,7 +3,7 @@
 ================== */
 .floating-main {
     flex-wrap: wrap;
-    @include flex(flex,space-between,null);
+    @include flex(flex,space-between,null,null);
 
     &-content {
         display: inline-block;
@@ -18,15 +18,15 @@
             text-align: center;
             padding: 25px;
             margin-bottom: 0;
-            @include flex(flex,center,center);
-            flex-direction: column;
+            @include flex(flex,center,center,column);
+            // flex-direction: column;
         }
     }
 
 
     @include viewport-sm{
-        flex-direction: column;
-        @include flex(flex,center,center);
+        // flex-direction: column;
+        @include flex(flex,center,center,column);
     }
 }
 
@@ -55,13 +55,13 @@
 
 .place-cards {
     .top-place-head {
-        @include flex(flex, space-between, center);
+        @include flex(flex, space-between, center,null);
     }
 }
 
 .top-places-main {
     flex-wrap: wrap;
-    @include flex(flex, space-between,null);
+    @include flex(flex, space-between,null,null);
     row-gap: 10px;
 
    &-content {
@@ -77,7 +77,8 @@
     }
 
     @include viewport-sm{
-        flex-direction: column;
+        // flex-direction: column;
+        @include flex(null,null,null,column);
 
         &-content {
             @include size(100%);
@@ -99,7 +100,7 @@
     background: $color-eerieb-black;
     @include size(100%);
     .detail{
-        @include flex(flex,space-between,center);
+        @include flex(flex,space-between,center,null);
         padding:16px 25px;
       }
 }

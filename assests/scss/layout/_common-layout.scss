@@ -76,9 +76,9 @@ img {
     }
 
     &-content{
-        @include flex(flex, center, start);
+        @include flex(flex, center, start,column);
         min-height: 100vh;
-        flex-direction: column;
+        // flex-direction: column;
         padding-bottom: 80px;
 
         @include viewport-sm {
@@ -174,7 +174,7 @@ img {
     }
 
     &-head{
-        @include flex(flex, space-between, center);
+        @include flex(flex, space-between, center,null);
     }
 
     &-main{
@@ -182,12 +182,13 @@ img {
     }
 
     &-img{
-        @include flex(flex, space-between, null);
+        @include flex(flex, space-between, null,null);
         @include size(100%);
     gap: 10px;
 
     @include viewport-sm {
-        flex-direction: column;
+        // flex-direction: column;
+        @include flex(null, null, null,column);
     }
     }
 }
@@ -235,12 +236,12 @@ img {
 }
 
 .place-info-main {
-    @include flex(flex,null,null);
+    @include flex(flex,null,null,null);
 
     &-content {
 
-        @include flex(flex, center, start);
-        flex-direction: column;
+        @include flex(flex, center, start,column);
+        // flex-direction: column;
         text-align: start;
 
         @include viewport-sm {

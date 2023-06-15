@@ -23,26 +23,27 @@
     flex-wrap: wrap;
 
     @include viewport-sm {
-        flex-direction: column;
+        // flex-direction: column;
+        @include flex(null,null,null,column);
     }
 
     &-logo {
         @include size(40%);
-        @include flex(flex, null, null);
+        @include flex(flex, null, null,null);
 
         @include viewport-sm {
             @include size(100%);
-            @include flex(flex, center, center)
+            @include flex(flex, center, center,null)
         }
     }
 
     &-content {
         @include size(60%);
 
-        @include flex(flex, space-between, null);
+        @include flex(flex, space-between, null,null);
 
         @include viewport-sm {
-            @include flex(flex, space-between, start);
+            @include flex(flex, space-between, start,null);
             @include size(100%);
         }
     }
