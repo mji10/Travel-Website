@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Agency</title>
+    <link rel="stylesheet" href="assests/css/styles.css">
+    <script src="https://kit.fontawesome.com/03a7a9cc86.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="">
+    <section class="video">
+        <button class='button'></button>
+        <div class="place-video">
+            <video src="assests/img/exploring.mp4" id="video"></video>
+        </div>
+        </div>
+    </section>
+
+
+    <script src="assests/js/script.js"></script>
+    <script>
+        var btn2 = document.querySelector('.button');
+        myVideo = document.getElementById("video");
+
+        btn2.addEventListener('click', function () {
+            btn2.classList.toggle('paused');
+
+            if (myVideo.paused) {
+                myVideo.play();
+            } else {
+                myVideo.pause();
+            }
+
+            return false
+        });
+    </script>
+
+</body>
+
+</html>
