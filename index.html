@@ -534,12 +534,23 @@
         </section>
 
         <section class="video">
-            <div class="place-video">
+            <!-- <div class="place-video">
                 <iframe height="609" src="https://www.youtube.com/embed/OHAWwaYu2H0" title="YouTube video player"
                     frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowfullscreen></iframe>
             </div>
+            </div> -->
+
+            <div class="custom-video">
+                <!-- first video  -->
+                <div class="custom-video__container">
+                    <video class="custom-video__video" width="100%" height="609px">
+                        <source src="assests/img/exploring.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="custom-video__control">▶</div>
+                </div>
             </div>
         </section>
     </main>
@@ -588,6 +599,53 @@
 
 
     <script src="assests/js/script.js"></script>
+
+    <script>
+        // Adding functinality to video play and pause button
+        const video = document.getElementsByClassName("custom-video__video");
+        const outerScreen = document.querySelector('custom-video');
+        // let i;
+        for (i = 0; i < video.length; i++) {
+            video[i].addEventListener("click", function () {
+                const controls = this.nextElementSibling;
+                if (controls.innerHTML === "▶") {
+                    controls.innerHTML = "| |";
+                    this.play();
+                    controls.classList.add("opacity");
+
+                } else {
+                    controls.innerHTML = "▶";
+                    this.pause();
+                    controls.classList.remove("opacity")
+                }
+            });
+            video[i].addEventListener("mouseout", function () {
+                const controls = this.nextElementSibling;
+                if (!this.paused) {
+                    controls.classList.add("opacity");
+                    controls.classList.add("opaque");
+                } else {
+                    controls.classList.remove("opaque");
+                }
+            });
+            video[i].addEventListener("mouseover", function () {
+                const controls = this.nextElementSibling;
+                controls.classList.remove("opacity");
+            });
+            video[i].addEventListener(
+                "ended",
+                function () {
+                    const controls = this.nextElementSibling;
+                    controls.innerHTML = "▶";
+                    controls.classList.remove("opaque");
+                    controls.classList.remove("opacity");
+                },
+                false
+            );
+
+            console.log(outerScreen);
+        }
+    </script>
 
 </body>
 

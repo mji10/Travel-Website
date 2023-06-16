@@ -11,22 +11,47 @@
 </head>
 
 <body class="">
-    <section class="video">
+    <!-- <section class="video">
+        <div class="place-video"></div>
         <button class='button'></button>
-        <div class="place-video">
-            <video src="assests/img/exploring.mp4" id="video"></video>
+
+        <video src="assests/img/exploring.mp4" id="video"></video>
         </div>
         </div>
-    </section>
+    </section> -->
+
+    <div class="video-container">
+        <video class="video">
+            <source
+                src="https://upload.wikimedia.org/wikipedia/commons/transcoded/d/db/Fractal-zoom-1-15-rupture.ogv/Fractal-zoom-1-15-rupture.ogv.240p.vp9.webm" />
+        </video>
+        <button class="video-control">
+            <a href="#" title="Play video" class="play"></a>
+        </button>
+    </div>
+
+    <div class="custom-video">
+        <!-- first video  -->
+        <div class="custom-video__container">
+            <video class="custom-video__video" width="100%" height="auto">
+                <source
+                    src="https://upload.wikimedia.org/wikipedia/commons/transcoded/d/db/Fractal-zoom-1-15-rupture.ogv/Fractal-zoom-1-15-rupture.ogv.240p.vp9.webm" />
+                type="video/mp4" />
+                Your browser does not support the video tag.
+            </video>
+            <div class="custom-video__control">▶</div>
+        </div>
+    </div>
 
 
     <script src="assests/js/script.js"></script>
-    <script>
+    <!-- <script>
         var btn2 = document.querySelector('.button');
         myVideo = document.getElementById("video");
 
         btn2.addEventListener('click', function () {
             btn2.classList.toggle('paused');
+
 
             if (myVideo.paused) {
                 myVideo.play();
@@ -36,6 +61,107 @@
 
             return false
         });
+
+
+        myVideo.addEventListener('mouseover', function () {
+
+            console.log("show");
+
+        })
+    </script> -->
+
+    <!-- <script>
+            const videoElement = document.querySelector('video');
+            const playPauseButton = document.querySelector('button');
+            const pauseBtn = document.querySelector('.video-control-symbol');
+            const span = document.querySelector('span');
+            const icon = document.querySelector('.play');
+
+
+            playPauseButton.addEventListener('click', () => {
+                playPauseButton.classList.toggle('playing');
+                icon.classList.toggle('play');
+                playPauseButton.classList.add('opacity');
+                if (playPauseButton.classList.contains('playing')) {
+                    videoElement.play();
+                    // videoElement.addEventListener('mouseover', function handleMouseOver() {
+                    //     playPauseButton.classList.remove('opacity');
+                    //     console.log("enter");
+                    // });
+
+                    // //  Hide on mouse out
+                    // videoElement.addEventListener('mouseout', function handleMouseOut() {
+                    //     playPauseButton.classList.add('opacity');
+                    // });
+                } else {
+                    videoElement.pause();
+                    // playPauseButton.classList.remove('opacity');
+                }
+            });
+
+            videoElement.addEventListener('ended', () => {
+                playPauseButton.classList.remove('playing');
+                // playPauseButton.classList.remove('opacity');
+            });
+
+            // videoElement.addEventListener('click', () => {
+            //     if (videoElement.paused) {
+            //         videoElement.play();
+            //         playPauseButton.classList.remove('opacity');
+            //     } else {
+            //         videoElement.pause();
+            //         // pauseBtn.style.opacity = "1";
+            //         console.log("a");
+            //         playPauseButton.classList.remove('opacity');
+            //         span.toggle
+            //     }
+            // });
+        </script> -->
+
+    <script>
+        // Adding functinality to video play and pause button
+        const video = document.getElementsByClassName("custom-video__video");
+        // let i;
+        for (i = 0; i < video.length; i++) {
+            video[i].addEventListener("click", function () {
+                const controls = this.nextElementSibling;
+                if (controls.innerHTML === "▶") {
+                    controls.innerHTML = "| |";
+                    this.play();
+                    controls.classList.add("opacity")
+                } else {
+                    controls.innerHTML = "▶";
+                    this.pause();
+                    controls.classList.remove("opacity")
+                }
+            });
+            video[i].addEventListener("mouseout", function () {
+                const controls = this.nextElementSibling;
+                if (!this.paused) {
+                    // controls.style.display = "flex";
+                    controls.classList.add("opacity");
+                    controls.classList.add("opaque");
+                } else {
+                    controls.classList.remove("opaque");
+                }
+            });
+            video[i].addEventListener("mouseover", function () {
+                const controls = this.nextElementSibling;
+                // controls.style.display = "flex";
+                controls.classList.remove("opacity");
+                // controls.classList.remove("opaque");
+            });
+            video[i].addEventListener(
+                "ended",
+                function () {
+                    const controls = this.nextElementSibling;
+                    controls.style.display = "flex";
+                    controls.innerHTML = "▶";
+                    controls.classList.remove("opaque");
+                },
+                false
+            );
+        }
     </script>
 
 </body>
