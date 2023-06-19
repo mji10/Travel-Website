@@ -11,7 +11,7 @@ const btn = document.querySelector('.burger_menu');
 const navbarCollapse = document.querySelector('.main-nav');
 const burger = document.querySelector('.burger_menu');
 btn.addEventListener('click', () => {
-  document.getElementsByTagName("BODY").classList.toggle('no_scroll');
+  document.getElementsByTagName("BODY")[0].classList.toggle('no_scroll');
   burger.classList.toggle('open');
   navbarCollapse.classList.toggle('show__nav');
 
